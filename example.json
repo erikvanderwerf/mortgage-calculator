@@ -1,0 +1,43 @@
+{
+  "currency": "usd",
+  "locale": "en_US",
+  "start_date": "2025-01-01",
+  "defaults": {
+    "term_years": 15,
+    "home_price": "385_000",
+    "down_payment": 0.22
+  },
+  "report": {
+    "pick": 5,
+    "quiet": false,
+    "detail_years": [3, 4, 5, 6]
+  },
+  "__comment_origination": "Origination includes Points, Processing Fees, Origination Fees, Appraisal, Credit Report Fee, Tax Service Fees",
+  "mortgages": [
+    {
+      "name": "USAA",
+      "rate": 5,
+      "origination": "11_928 + 1295 + 600 + 76 + 85"
+    },
+    {
+      "name": "NOVA",
+      "rate": 5.875,
+      "origination": "2_772 + 1250 + 650 + 125"
+    },
+    {
+      "name": "Chase",
+      "rate": 5.75,
+      "origination": "5_114 + 1595 + 600 + 63 + 87"
+    },
+    {
+      "name": "Zillow",
+      "rate": 5.25,
+      "origination": "12_579 + 1500 + 600 + 73"
+    },
+    {
+      "name": "Rocket",
+      "rate": 5.875,
+      "origination": "9760 + 1125 + 375 + 200 + 730 + 60"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "$defs": {
+    "Defaults": {
+      "properties": {
+        "term_years": {
+          "title": "Term Years",
+          "type": "integer"
+        },
+        "extra": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "default": "0",
+          "title": "Extra"
+        },
+        "home_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Home Price"
+        },
+        "down_payment": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Down Payment"
+        }
+      },
+      "required": [
+        "term_years"
+      ],
+      "title": "Defaults",
+      "type": "object"
+    },
+    "Report": {
+      "properties": {
+        "pick": {
+          "title": "Pick",
+          "type": "integer"
+        },
+        "quiet": {
+          "title": "Quiet",
+          "type": "boolean"
+        },
+        "detail_years": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Detail Years",
+          "type": "array"
+        }
+      },
+      "required": [
+        "pick",
+        "quiet",
+        "detail_years"
+      ],
+      "title": "Report",
+      "type": "object"
+    },
+    "TemplateMortgage": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "rate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Rate"
+        },
+        "origination": {
+          "pattern": "^\\d[ _.+\\d]*$",
+          "title": "Origination",
+          "type": "string"
+        },
+        "extra": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "default": "0",
+          "title": "Extra"
+        },
+        "home_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Home Price"
+        },
+        "down_payment": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Down Payment"
+        }
+      },
+      "required": [
+        "name",
+        "rate",
+        "origination"
+      ],
+      "title": "TemplateMortgage",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "currency": {
+      "title": "Currency",
+      "type": "string"
+    },
+    "locale": {
+      "title": "Locale",
+      "type": "string"
+    },
+    "start_date": {
+      "format": "date",
+      "title": "Start Date",
+      "type": "string"
+    },
+    "defaults": {
+      "$ref": "#/$defs/Defaults"
+    },
+    "report": {
+      "$ref": "#/$defs/Report"
+    },
+    "mortgages": {
+      "items": {
+        "$ref": "#/$defs/TemplateMortgage"
+      },
+      "title": "Mortgages",
+      "type": "array"
+    }
+  },
+  "required": [
+    "currency",
+    "locale",
+    "start_date",
+    "defaults",
+    "report",
+    "mortgages"
+  ],
+  "title": "Input",
+  "type": "object"
+}
