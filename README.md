@@ -17,6 +17,7 @@ mortgage example.json  # May take a few seconds
 ```shell
 python3 -m venv venv
 .\venv\Scripts\activate
+pip install -e .
 mortgage.exe example.json  # May take a few seconds.
 ```
 
